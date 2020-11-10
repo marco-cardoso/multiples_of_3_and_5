@@ -1,6 +1,6 @@
 def is_multiple_of(number: int, multiple: int) -> bool:
     """
-    Check if the parameter number is multiple of the variable multiple
+    Check if the parameter number is multiple of the parameter multiple
     :param number: The number to identify if is multiple or not
     :param multiple: The multiple
     :return: A boolean with the result whether the number is multiple or not
@@ -16,7 +16,7 @@ def show_result(message: str):
     print(message)
 
 
-def get_message(number: int, multiple_of_three : bool, multiple_of_five : bool) -> str:
+def get_message(number: int, multiple_of_three: bool, multiple_of_five: bool) -> str:
     """
     Get the message for the given number
 
