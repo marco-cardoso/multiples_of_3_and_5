@@ -16,28 +16,29 @@ def show_result(message: str):
     print(message)
 
 
-def get_message(number: int) -> str:
+def get_message(number: int, multiple_of_three : bool, multiple_of_five : bool) -> str:
     """
     Get the message for the given number
 
-    Possible results
+    Possible results :
     For multiples of three return “Three”
     For multiples of five return “Five”
     For numbers which are multiples of both three and five return “ThreeFive”
     For none of the cases above return the number itself
 
+
     :param number: An integer with the number to analyse
+    :param multiple_of_five: A boolean with whether the result is multiple of five or not
+    :param multiple_of_three: A boolean with whether the result is multiple of three or not
     :return: The message with one of the above results
     """
-    is_multiple_of_three = is_multiple_of(number, 3)
-    is_multiple_of_five = is_multiple_of(number, 5)
 
     result_message = None
-    if is_multiple_of_three and is_multiple_of_five:
+    if multiple_of_three and multiple_of_five:
         result_message = "ThreeFive"
-    elif is_multiple_of_three:
+    elif multiple_of_three:
         result_message = "Three"
-    elif is_multiple_of_five:
+    elif multiple_of_five:
         result_message = "Five"
     else:
         result_message = str(number)
@@ -47,7 +48,9 @@ def get_message(number: int) -> str:
 
 def main():
     for number in range(1, 101):
-        message = get_message(number)
+        is_multiple_of_three = is_multiple_of(number, 3)
+        is_multiple_of_five = is_multiple_of(number, 5)
+        message = get_message(number, is_multiple_of_three, is_multiple_of_five)
         show_result(message)
 
 
